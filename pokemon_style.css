@@ -1,0 +1,21 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
+
+.header-title{
+    color: #C59C00;
+    font-size: 18px;
+}
+.top-bar{
+    background-color: #FFDA4E;
+}
+
+.logo-bar{
+    background-image: linear-gradient(#FFF3C1, #FFCB05);
+}
+
+.controls{
+    background-color: #DFE4F0;
+}
