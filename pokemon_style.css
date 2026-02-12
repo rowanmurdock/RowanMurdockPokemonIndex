@@ -19,3 +19,12 @@ body {
 .controls{
     background-color: #DFE4F0;
 }
+
+.btn{
+    border: 2px solid #3B5CA7;
+    border-radius: 5px;
+    background-image: linear-gradient(#7088BF, #3B5CA7);
+    color: #DFE4F0;
+    font-weight: 400;
+    
+}
