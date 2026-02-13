@@ -4,10 +4,25 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .header-title {
@@ -48,6 +63,7 @@ body {
 .logo-bar {
     background-image: linear-gradient(#FFF3C1, #FFCB05);
     height: 476px;
+    z-index: 1;
 
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
@@ -66,16 +82,26 @@ body {
 
 .results {
     flex: 1;
-    border: solid 2px #3B5CA7;
-    border-radius: 10px;
+    margin-top: -80px;
+    margin-bottom: 20px;
+    z-index: 2;
+    padding: 20px;
+    max-width: 760px;
+    max-height: 386px;
+    width: 100%;
+    border: black solid 2px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .controls {
     height: 161px;
     background-color: #DFE4F0;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 220px;
+    gap: 10px;
 
 
 }
