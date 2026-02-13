@@ -1,6 +1,15 @@
+// the amount of pokemon to fetch per page
 const POKEMON_LIMIT = 10;
+
+// the current offset for pagination, starts at 0 for the first page, goes up by 10
 let currentOffset = 0;
 
+
+/**
+ * Fetches 10 different pokemon from the pokeapi, based on the current offset. Also fetches details for each pokemon to get their sprites and ids.
+ * @returns {Promise<void>} A list of pokemon objects with their details, including name, id, and sprite URL.
+ * @throws Will throw an error if the fetch request fails
+ */
 async function fetchPokemon() {
     try {
         const prev = document.getElementById('prev-btn');
@@ -21,11 +30,15 @@ async function fetchPokemon() {
 
     } catch (error) {
         console.error("Failed to fetch Pokémon from PokéAPI:", error);
-        document.getElementById('status-msg').textContent = "Sorry! Error loading Pokémon.";
+        document.getElementById('status-msg').textContent = "Sorry! Error loading Pokémon. Please try again.";
     }
 }
 
-
+/**
+ * Uses the pokemon data to create and display cards in the grid layout, each pokemon has an id, name, and URL for the photo
+ * @param {*} pokemonList - A list of pokemon data objects, containing name, id, and URL for their photo
+ * @returns {void} Renders the pokemon cards in the grid layout on the page
+ */
 function renderCards(pokemonList) {
     const grid = document.getElementById('pokemon-grid');
     grid.innerHTML = '';
@@ -45,7 +58,7 @@ function renderCards(pokemonList) {
     });
 }
 
-
+//Event listeners for next and previous buttons, updates the current offset and fetches new pokemon
 document.getElementById('next-btn').addEventListener('click', () => {
     currentOffset += POKEMON_LIMIT;
     fetchPokemon();
@@ -60,5 +73,5 @@ document.getElementById('prev-btn').addEventListener('click', () => {
     }
 });
 
-
+//initial fetch of pokemon
 fetchPokemon();
