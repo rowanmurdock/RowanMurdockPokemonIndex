@@ -89,6 +89,7 @@ main {
     gap: 20px;
 }
 
+
 .pokemon-card {
     background-color: #FFFFFF;
     max-width: 136px;
@@ -151,7 +152,7 @@ main {
 Responsive styles for mobile devices 
 -----------------------------------------*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
     .hide-on-mobile {
         display: none;
