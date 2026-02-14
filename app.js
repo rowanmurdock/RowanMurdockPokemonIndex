@@ -7,7 +7,7 @@ let currentOffset = 0;
 
 /**
  * Fetches 10 different pokemon from the pokeapi, based on the current offset. Also fetches details for each pokemon to get their sprites and ids.
- * @returns {Promise<void>} A list of pokemon objects with their details, including name, id, and sprite URL.
+ * @returns {Promise<void>} Function does not return data, but calls renderCards which creates pokemon cards in grid
  * @throws Will throw an error if the fetch request fails
  */
 async function fetchPokemon() {
